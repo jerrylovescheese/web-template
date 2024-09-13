@@ -263,6 +263,15 @@
     .canvas-2-inbox:hover .canvas-2-inbox-t {
         color: white !important;
     }
+
+    #canvas-2-inbox-5-in {
+        background-color: black !important;
+    }
+
+    #canvas-2-inbox-5:hover #canvas-2-inbox-5-in,
+    #canvas-2-inbox-5:focus #canvas-2-inbox-5-in {
+        background-color: transparent !important;
+    }
 }
 
 @media(prefers-color-scheme: light) {
@@ -273,6 +282,34 @@
 
     #canvas-4-text {
         color: #000 !important;
+    }
+
+    #canvas-2-inbox-1:hover,
+    #canvas-2-inbox-1:focus {
+        background-color: rgba(255, 204, 0, 0.3) !important;
+    }
+
+    #canvas-2-inbox-2:hover,
+    #canvas-2-inbox-2:focus {
+        background-color: rgba(0, 117, 242, 0.3) !important;
+    }
+
+    #canvas-2-inbox-3:hover,
+    #canvas-2-inbox-3:focus {
+        background-color: rgba(153, 242, 0, 0.3) !important;
+    }
+
+    #canvas-2-inbox-4:hover,
+    #canvas-2-inbox-4:focus {
+        background-color: rgba(242, 0, 89, 0.3) !important;
+    }
+
+    #canvas-2-inbox-1 {
+        color: hsl(48, 100%, 45%) !important;
+    }
+
+    #canvas-2-inbox-3 {
+        color: hsl(82, 100%, 37%) !important;
     }
 }
 
@@ -316,6 +353,13 @@
         margin-right: 30px !important;
     }
 
+    #canvas-2-text {
+        position: sticky !important;
+        width: 70% !important;
+        left: 30px !important;
+        text-align: left !important;
+    }
+
     #canvas-3-text {
         font-size: 80px !important;
         margin-left: 30px !important;
@@ -344,6 +388,12 @@
     }
 }
 
+@media (max-height: 430px) {
+    #canvas-2-text {
+        display: none;
+    }
+}
+
 @keyframes home-page-news-fade-in {
     0% {
         color: transparent;
@@ -366,6 +416,37 @@
         color: #ffffff;
         transform: translateY(0px);
     }
+}
+
+.btc {
+    transition: all 0.2s;
+    animation: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.11),
+        0 2px 2px rgba(0, 0, 0, 0.11),
+        0 4px 4px rgba(0, 0, 0, 0.11),
+        0 8px 8px rgba(0, 0, 0, 0.11);
+}
+
+/* .btc.new-style {
+    color: #fff;
+} */
+
+#btc-1 {
+    filter: drop-shadow(0px 5px 5px rgba(36, 36, 36, 0.5));
+}
+
+/* #btc-1.new-style {
+    background-image: url(../img/home-button-dark.svg);
+} */
+
+#btc-o-1 {
+    background: transparent;
+    transition: all 0.2s;
+}
+
+.btc-o::before,
+.btc-o::after {
+    background: transparent;
 }
 
 #namecard {
@@ -450,6 +531,15 @@
     text-align: center;
     font-family: 'Recursive', Courier, monospace;
     font-size: 28px;
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.11),
+        0 2px 2px rgba(0, 0, 0, 0.11),
+        0 4px 4px rgba(0, 0, 0, 0.11),
+        0 8px 8px rgba(0, 0, 0, 0.11);
+}
+
+#one {
+    padding-left: 0;
 }
 
 #suspended-notice {
@@ -625,6 +715,7 @@
     font-size: 17px;
     padding-left: 30px;
     padding-right: 30px;
+    text-align: justify;
 }
 
 .canvas-text-small-last {
@@ -638,9 +729,11 @@
 
 #canvas-2-text {
     position: sticky;
-    left: 30px;
+    left: 0;
+    width: 100%;
     padding: 0;
     font-weight: bold;
+    text-align: center;
 }
 
 #canvas-2 .canvas-text-small {
@@ -657,7 +750,7 @@
     padding: 20px;
     margin-top: 30px;
     margin-left: 20px;
-    transition: all 0.2s;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
     position: relative;
     overflow: hidden;
 }
@@ -689,7 +782,8 @@
     border-color: rgba(255, 204, 0, 0.6);
 }
 
-#canvas-2-inbox-1:hover {
+#canvas-2-inbox-1:hover,
+#canvas-2-inbox-1:focus {
     background-color: rgba(255, 204, 0, 0.6);
 }
 
@@ -698,7 +792,8 @@
     border-color: rgba(0, 117, 242, 0.6);
 }
 
-#canvas-2-inbox-2:hover {
+#canvas-2-inbox-2:hover,
+#canvas-2-inbox-2:focus {
     background-color: rgba(0, 117, 242, 0.6);
 }
 
@@ -707,7 +802,8 @@
     border-color: rgba(153, 242, 0, 0.6);
 }
 
-#canvas-2-inbox-3:hover {
+#canvas-2-inbox-3:hover,
+#canvas-2-inbox-3:focus {
     background-color: rgba(153, 242, 0, 0.6);
 }
 
@@ -716,17 +812,70 @@
     border-color: rgba(242, 0, 89, 0.6);
 }
 
-#canvas-2-inbox-4:hover {
+#canvas-2-inbox-4:hover,
+#canvas-2-inbox-4:focus {
     background-color: rgba(242, 0, 89, 0.6);
 }
 
+#canvas-2-inbox-5 {
+    width: 222px;
+    height: 282px;
+    border: none;
+    background-image: linear-gradient(57deg, rgba(0, 255, 242), rgba(54, 0, 233));
+    margin-right: 30px;
+    padding: 0;
+}
+
+#canvas-2-inbox-5:focus {
+    width: 360px;
+}
+
+#canvas-2-inbox-5-in {
+    width: 220px;
+    height: 280px;
+    margin-left: 1px;
+    margin-top: 1px;
+    border-radius: 9px;
+    background-color: #fff;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#canvas-2-i-5-i {
+    display: block;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-image: linear-gradient(57deg, rgba(0, 255, 242), rgba(54, 0, 233));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#canvas-2-inbox-5 .canvas-2-inbox-t {
+    transition: all 0.2s;
+}
+
+#canvas-2-inbox-5:hover #canvas-2-inbox-5-in,
+#canvas-2-inbox-5:focus #canvas-2-inbox-5-in {
+    background-color: transparent;
+}
+
+#canvas-2-inbox-5:hover .canvas-2-inbox-t,
+#canvas-2-inbox-5:focus .canvas-2-inbox-t {
+    color: white;
+}
+
+#canvas-2-inbox-5:focus .canvas-2-inbox-in {
+    color: white;
+}
+
 .canvas-2-inbox-in {
-    display: none;
     width: 180px;
     position: absolute;
     right: 20px;
     bottom: 20px;
     text-align: right;
+    color: transparent;
+    transition: all 0.2s;
 }
 
 .canvas-2-inbox-in a {
@@ -734,5 +883,40 @@
 }
 
 .canvas-2-inbox:focus .canvas-2-inbox-in {
-    display: block;
+    color: unset;
+}
+
+#canvas-3 {
+    background-image: url(../img/IMG_5121.webp);
+    background-size: contain;
+    background-color: #fff;
+    background-position: 0 center;
+    color: black;
+}
+
+#canvas-3-text {
+    width: 90%;
+    text-align: right;
+    font-weight: bold;
+    font-size: 25px !important;
+}
+
+#canvas-3 .canvas-text-small {
+    font-family: 'Source Han Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.11),
+        0 2px 2px rgba(0, 0, 0, 0.11),
+        0 4px 4px rgba(0, 0, 0, 0.11),
+        0 8px 8px rgba(0, 0, 0, 0.11);
+}
+
+#canvas-4 {
+    align-items: center;
+}
+
+#canvas-4 iframe {
+    max-width: 80% !important;
+    max-height: 80%;
+    margin: 10px;
 }
