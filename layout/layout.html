@@ -11,15 +11,25 @@
             $("#content-unit").toggleClass("active");
         });
     });
+    // Ensure the DOM is fully loaded before running the script
+    $(document).ready(function () {
+        // Get the title of the document
+        var title = $(document).attr("title");
+        // Display the title inside an element with id 'titleDisplay'
+        $("#titleDisplay").text(title);
+    });
 </script>
 
 <header id="basic">
     <div id="basic-text-container">
-        <div id="b-info"></div>
+        <a href="https://jerryly.top">
+            <div id="b-info"></div>
+        </a>
         <div id="b-more">more</div>
         <div id="b-more"><a href="#">to top</a></div>
         <div id="b-more"><a href="./clock.html">clock</a></div>
         <div id="b-more"><a href="./aluminum_studio.html">about</a></div>
+        <div id="b-more"><b><span id="titleDisplay"></span></b></div>
     </div>
     <div id="cup">
         <div id="water">
