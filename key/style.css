@@ -13,273 +13,127 @@ body {
     margin: 0;
 }
 
-#buttercup {
+#basic {
+    width: 100vw;
+    height: 50px;
+    background-image: linear-gradient(rgba(238, 238, 238), rgba(238, 238, 238, 0));
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 30;
 }
 
-#butter {
-    width: 100vw;
-    height: 0;
-    background-color: #eeeeeec8;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    -moz-backdrop-filter: blur(12px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-    overflow-x: hidden;
-    overflow-y: scroll;
+#basic.active {
+    background-image: linear-gradient(rgb(192, 192, 192), rgba(238, 238, 238, 0));
 }
 
-#butter.active {
-    height: 100vh;
+#b-info {
+    height: 40px;
+    aspect-ratio: 9/5;
+    background-size: cover;
+    font-family: 'Inter', 'Source Han Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    transition: all 0.2s;
+    background-image: url(../img/home-button-light.svg);
 }
 
-#butter a {
+#b-more {
+    font-family: 'Inter', 'Source Han Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 20px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+
+.b-style {
+    font-family: 'Inter', 'Source Han Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 20px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+
+#basic-text-container {
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(rgba(146, 146, 146, 0.1), rgba(238, 238, 238, 0));
+    padding-left: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    position: relative;
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+#basic-text-container a {
     color: unset;
     text-decoration: none;
 }
 
-#butter a:hover {
-    text-decoration: underline;
+#basic:hover #basic-text-container {
+    padding-top: 5px;
+}
+
+#basic:hover #b-info {
+    height: 44px;
+}
+
+#basic:hover #b-more,
+#basic:hover .b-style {
+    font-size: 17px;
 }
 
 #cup {
-    position: absolute;
+    width: 100vw;
+    display: block;
+    background-color: rgba(247, 247, 247, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    -moz-backdrop-filter: blur(20px);
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    overflow: hidden;
+    height: 0;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 #cup.active {
-    top: 85vh;
-}
-
-#btcs {
-    position: relative;
-}
-
-.btc-o {
-    height: 50px;
-    background-color: #eee;
-    border-radius: 0 0 10px 10px;
-}
-
-#btc-circles {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#btc-o-1 {
-    width: 307px;
-}
-
-.btc-o::before,
-.btc-o::after,
-.btc-o .btc-circles::before,
-.btc-o .btc-circles::after {
-    content: "";
-    position: absolute;
-    top: 0;
-}
-
-.btc-o::before,
-.btc-o::after {
-    background-image: url(../img/corner_a.svg);
-    background-size: contain;
-    width: 10px;
-    height: 10px;
-    left: -10px;
-    z-index: 1;
-}
-
-.btc-o::after {
-    background-image: url(../img/corner_b.svg);
-    background-size: contain;
-    left: unset;
-    right: -10px;
-}
-
-#cup.active .btc-o::before,
-#cup.active .btc-o::after {
-    background-image: none;
-}
-
-#cup.active .btc-o {
-    background-color: #eee;
-    border-radius: 10px;
-}
-
-.btc {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    color: black;
-    animation: app-elements-fade-in 2s cubic-bezier(0.75, 0, 0, 1.05) 0s 1;
-}
-
-#btc-1 {
-    width: 72px;
-    background-image: url(../img/home-button-light.svg);
-    background-size: cover;
-}
-
-#btc-2 {
-    margin-left: 77px;
-}
-
-#btc-3 {
-    margin-left: 122px;
-}
-
-#btc-4 {
-    margin-left: 167px;
-}
-
-#btc-5 {
-    margin-left: 212px;
-}
-
-#btc-6 {
-    margin-left: 257px;
-}
-
-.btc:hover {
-    background-color: hsl(0, 0%, 83%);
-}
-
-#doors-wall.active {
     height: 100vh;
 }
 
-#doors-wall-head {
+#water {
     font-family: 'Inter', 'Source Han Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 35px;
-    font-weight: bold;
-    margin-left: 30px;
-    margin-top: 30px;
-}
-
-#doors-wall-grid {
-    font-family: 'Inter', 'Source Han Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 15px;
+    margin-top: 80px;
+    margin-left: 25px;
+    margin-right: 25px;
     display: grid;
-    grid-template-columns: 1fr 2fr 3fr;
-    column-gap: 15px;
+    grid-template-columns: 1fr 2fr;
 }
 
-.d-wall-sec>ul {
+#water a {
+    color: unset;
+    text-decoration: none;
+}
+
+#water-head {
+    font-size: 40px;
+    font-weight: lighter;
+}
+
+#water-list {
     list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-.d-wall-sec>ul>a>li {
-    margin-bottom: 5px;
-    font-size: 18px;
-}
-
-.d-wall-sec-text {
-    font-family: 'Inter', 'Source Han Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 22px;
-}
-
-#d-wall-sec-3>ul {
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
 }
 
-#d-wall-mark {
-    font-family: 'Inter', 'Source Han Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    white-space: nowrap;
-    padding-bottom: 20px;
-    color: rgba(0, 0, 0, 0.5);
-}
-
-#d-wall-mark-small {
-    font-size: 8px;
-}
-
-#cup-labels {
-    width: 307px;
-    height: 30px;
-    position: absolute;
-    top: 50px;
-    display: flex;
-}
-
-.cup-label {
-    width: fit-content;
-    padding: 0px 10px 0px 10px;
-    height: 25px;
-    position: absolute;
-    border-radius: 5px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 15px;
-    line-height: 25px;
-    background-color: hsl(0, 0%, 96%);
-    display: none;
-    text-wrap: nowrap;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11),
-        0 2px 2px rgba(0, 0, 0, 0.11),
-        0 4px 4px rgba(0, 0, 0, 0.11),
-        0 8px 8px rgba(0, 0, 0, 0.11);
-}
-
-#cup-label-1.active {
-    display: block;
-    margin-left: 10.66px;
-}
-
-#cup-label-2.active {
-    display: block;
-    margin-left: 71.39px;
-}
-
-#cup-label-3.active {
-    display: block;
-    margin-left: 117.62px;
-}
-
-#cup-label-4.active {
-    display: block;
-    margin-left: 164.45px;
-}
-
-#cup-label-5.active {
-    display: block;
-    margin-left: 195.02px;
-}
-
-#cup-label-6.active {
-    display: block;
-    margin-left: 244.78px;
+#water-list li {
+    margin-top: 5px;
+    font-size: 18px;
 }
 
 /* loader style */
@@ -521,7 +375,7 @@ body {
 
 .subtitle {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 25px !important;
 }
 
 nav {
@@ -557,13 +411,17 @@ nav {
 /* media query */
 
 @media (max-width: 768px) {
+    html {
+        scrollbar-color: unset !important;
+    }
+
     #door-3 {
         display: none !important;
     }
 
     #header-unit {
         right: 0;
-        top: 70px;
+        top: 50px;
         display: unset;
         width: auto;
         margin-left: 10px;
@@ -644,12 +502,18 @@ nav {
 }
 
 @media (max-width: 430px) {
-    #doors-wall-grid {
-        grid-template-columns: 1fr 1fr;
+    #water-list {
+        grid-template-columns: 1fr !important;
     }
 
-    #d-wall-sec-3>ul {
+    #b-more #titleDisplay {
+        display: none !important;
+    }
+
+    #b-more b {
         display: block;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 }
 
@@ -688,53 +552,27 @@ nav {
     }
 
     a {
-        color: hsl(225, 36%, 72%) !important;
+        color: #9AEBA3 !important;
     }
 
-    #butter,
-    .btc-o {
-        background-color: #333333;
+    #basic {
+        background-image: linear-gradient(rgba(118, 118, 118, 0.5), rgba(0, 0, 0, 0)) !important;
     }
 
-    #butter {
-        background-color: #333333c8;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        -moz-backdrop-filter: blur(12px);
+    #basic.active {
+        background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0)) !important;
     }
 
-    .btc {
-        color: #fff;
-        animation: app-elements-fade-in-dark 2s cubic-bezier(0.75, 0, 0, 1.05) 0s 1;
+    #b-info {
+        background-image: url(../img/home-button-dark.svg) !important;
     }
 
-    .btc-o::before,
-    .btc-o::after {
-        background-image: url(../img/corner_a_dark.svg);
+    #b-more {
+        color: rgba(255, 255, 255, 0.5) !important;
     }
 
-    .btc-o::after {
-        background-image: url(../img/corner_b_dark.svg);
-    }
-
-    #cup.active .btc-o {
-        background-color: #666;
-    }
-
-    #btc-1 {
-        background-image: url(../img/home-button-dark.svg);
-    }
-
-    .btc:hover {
-        background-color: hsl(0, 0%, 53%);
-    }
-
-    #d-wall-mark {
-        color: rgba(255, 255, 255, 0.5);
-    }
-
-    .cup-label {
-        background-color: #4d4d4d;
+    #cup {
+        background-color: rgba(118, 118, 118, 0.5) !important;
     }
 
     #copyright-info {
@@ -803,30 +641,53 @@ nav {
 
 /* special elements style */
 
+/* Make the scrollbar appear on top of the content */
+html {
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: #888 transparent;
+    /* For Firefox */
+}
+
+body {
+    overflow: overlay;
+    /* For WebKit browsers, enables overlay scrollbars */
+}
+
+/* WebKit browsers: Scrollbar customization */
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 8px;
+    /* Make it thin */
     height: 0px;
-    border-radius: 10px;
-    background: rgba(224, 224, 224, 0.8);
+    /* For horizontal scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: #f1f1f100;
+    background: transparent;
+    /* Make track transparent */
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: #888;
+    background-color: #888;
+    /* Scrollbar color */
+    border-radius: 4px;
+    /* Round scrollbar edges */
 }
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Darker on hover */
+}
+
 
 a {
     text-decoration: none;
-    color: #E57200;
+    color: #13678A;
 }
 
 a:hover {
     text-decoration: underline;
+    color: hsl(198, 76%, 51%);
 }
 
 @font-face {
@@ -839,4 +700,10 @@ a:hover {
     font-family: 'Source Han Sans';
     src: url(../fonts/SourceHanSansCN-Bold-min.woff2) format('woff2');
     font-weight: bold;
+}
+
+@-moz-document url-prefix() {
+    div {
+        scrollbar-width: none;
+    }
 }
